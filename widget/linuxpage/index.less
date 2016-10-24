@@ -1,0 +1,46 @@
+/*
+  通用类
+  ===================================================
+*/
+
+
+/*定宽*/
+
+.wd1200 {
+  width: 1200px;
+}
+
+/*清除浮动*/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/*内部容器*/
+
+.inner-wrapper {
+  margin: 0 auto;
+}
+
+/* 
+  其他（非通用）
+  =====================================
+ */
+ body{
+  overflow: hidden;
+ }
+#bgwrap {
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  position: fixed;
+  background-image: url('../static/images/texture.png?__inline');
+  background-color: rgb(93, 172, 129);
+  z-index: -1;
+}
