@@ -6,7 +6,7 @@ class dmReadable extends Readable {
 
   constructor(iterable) {
     super()
-    this.iterable = new funtion * (argument) {
+    this.iterable = new function *(argument){
       yield * iterable
     }
   }
