@@ -9,4 +9,5 @@ gulp.task('default', function(arg) {
   	.src('page/**.html')
     .pipe(dm_concat())
     .pipe(gulp.dest('output/'));
+
 });
