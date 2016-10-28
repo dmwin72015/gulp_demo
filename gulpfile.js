@@ -10,6 +10,7 @@ const gulp_rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const md5_rev = require('gulp-rev');
 
+const filemap = require('./plugin/file-map');
 
 var projetc_dir = process.cwd();
 
@@ -20,7 +21,6 @@ gulp.task('default', function (arg) {
       basepath:projetc_dir
     }))
     .pipe(gulp.dest('output/'));
-
 });
 
 /*
@@ -35,13 +35,23 @@ gulp.task('less', function () {
       keepBreaks:true,
       removeEmpty:true
     }))
-    // .pipe(md5_rev())
+    .pipe(md5_rev())
     .pipe(gulp.dest('static/css/'))
-    // .pipe(md5_rev.manifest())
-    // .pipe(gulp.dest('output/'))
+    .pipe(md5_rev.manifest())
+    .pipe(gulp.dest('output/'))
     ;
 });
 
+/*
+* 生成结构json
+* */
+gulp.task('src_map',function(){
+  gulp.src('.')
+    .pipe(filemap())
+    .pipe(gulp_rename('filemap.json'))
+    .pipe(gulp.dest('output/'));
+
+});
 
 gulp.task('test', function (arg) {
 
