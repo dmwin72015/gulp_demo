@@ -46,7 +46,7 @@ gulp.task('less', function () {
 * 生成结构json
 * */
 gulp.task('src_map',function(){
-  gulp.src('.')
+  gulp.src('./output/**')
     .pipe(filemap())
     .pipe(gulp_rename('filemap.json'))
     .pipe(gulp.dest('output/'));

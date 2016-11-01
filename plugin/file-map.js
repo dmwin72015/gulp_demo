@@ -11,6 +11,8 @@ const PluginError = gutil.PluginError;
 
 module.exports = function () {
 
+  var fileArr = [];
+
   return through.obj(function (file, enc, cb) {
 
     /* 对file处理之后，再传递回调函数
@@ -31,6 +33,7 @@ module.exports = function () {
     }
      */
 
+    // fileArr.push(file.cwd);
     return;
   });
 
@@ -55,4 +58,4 @@ function getFileList(dir) {
   var res = fs.readdirSync(dir);
   console.log(res);
 }
-getFileList(process.cwd());
+// getFileList(process.cwd());
